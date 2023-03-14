@@ -31,13 +31,19 @@ public class FileHandler {
                 System.out.println("Titolo del libro: ");
                 String titolo = userScanner.nextLine();
                 System.out.println("Numero di pagine: ");
-                int numeroPagine = Integer.parseInt(userScanner.nextLine());
+                int numeroPagine = 0;
+                try {
+                    numeroPagine = Integer.parseInt(userScanner.nextLine());
+                } catch (NumberFormatException e) {
+                    System.out.println("Numero non corretto");
+                }
+
                 System.out.println("Nome dell'autore: ");
                 String nomeAutore = userScanner.nextLine();
                 System.out.println("Nome dell'editore: ");
                 String nomeEditore = userScanner.nextLine();
 
-                Libro book = new Libro(titolo,numeroPagine,nomeAutore,nomeEditore);
+                Libro book = new Libro(titolo, numeroPagine, nomeAutore, nomeEditore);
                 booklist[i] = book;
                 System.out.println(Arrays.toString(booklist));
             }
