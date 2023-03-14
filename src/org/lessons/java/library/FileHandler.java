@@ -34,9 +34,7 @@ public class FileHandler {
                 int numeroPagine = 0;
                 try {
                     numeroPagine = Integer.parseInt(userScanner.nextLine());
-                } catch (NumberFormatException e) {
-                    System.out.println("Numero non corretto");
-                }
+                } catch (NumberFormatException e) {}
 
                 System.out.println("Nome dell'autore: ");
                 String nomeAutore = userScanner.nextLine();
@@ -47,7 +45,7 @@ public class FileHandler {
                 booklist[i] = book;
                 System.out.println(Arrays.toString(booklist));
             }
-        } catch (RuntimeException e){
+        } catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         } finally {
             userScanner.close();
