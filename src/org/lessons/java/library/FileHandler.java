@@ -12,12 +12,17 @@ public class FileHandler {
     public static void main(String[] args) {
         Scanner userScanner = new Scanner(System.in);
         int numeriScelti = 0;
+        boolean validInput = false;
 
-
-        System.out.println("Quanti libri vuoi inserire?");
-        numeriScelti = Integer.parseInt(userScanner.nextLine());
-
-
+        while (!validInput || numeriScelti <= 0){
+            System.out.println("Quanti libri vuoi inserire?");
+            try{
+                numeriScelti = Integer.parseInt(userScanner.nextLine());
+                validInput = true;
+            } catch (Exception e){
+                System.out.println("Input non valido");
+            }
+        }
 
         Libro[] booklist = new Libro[numeriScelti];
 

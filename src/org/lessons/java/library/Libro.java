@@ -63,7 +63,7 @@ public class Libro {
 //    METODI
     public void textValidator(String text) throws RuntimeException{
         if(text.length() == 0){
-            throw new IllegalArgumentException("Il testo deve contenere almeno un carattere");
+            throw new RuntimeException("Il testo deve contenere almeno un carattere");
         }
     }
     public void numberValidator(int number) throws RuntimeException{
